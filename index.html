@@ -291,6 +291,103 @@
             max-width: 75%;
             box-shadow: none !important;
         }
+
+
+        /* ✅ 모바일 최적화: 768px 이하 */
+@media (max-width: 768px) {
+  /* 전체 박스 사이즈 계산 안정화 */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    padding: 16px;            /* 40px → 16px */
+    line-height: 1.65;
+  }
+
+  .container {
+    padding: 18px;            /* 50px → 18px */
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.6em;         /* 2.2em → 축소 */
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+  }
+
+  h2 {
+    font-size: 1.2em;         /* 1.5em → 축소 */
+    margin-top: 30px;
+    margin-bottom: 14px;
+    padding-left: 12px;
+  }
+
+  h3 {
+    font-size: 1.05em;        /* 1.25em → 축소 */
+    margin-top: 22px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1em;           /* 1.05em → 약간 축소 */
+    text-align: left;         /* 모바일은 justify가 가독성 떨어짐 */
+    word-break: keep-all;
+  }
+
+  .section-box {
+    padding: 16px;            /* 25px → 16px */
+    margin-bottom: 22px;
+  }
+
+  .saju-image {
+    max-width: 100%;          /* 85% → 100% */
+    border-width: 2px;
+    margin: 16px auto;
+  }
+
+  /* ✅ 테이블: 모바일에서 글씨/패딩 줄이고, 헤더 줄바꿈 허용 */
+  table {
+    font-size: 0.92em;
+  }
+
+  th, td {
+    padding: 10px 8px;        /* 14px 10px → 축소 */
+  }
+
+  th {
+    white-space: normal;      /* nowrap 해제(모바일에서 줄바꿈) */
+  }
+
+  /* ✅ 행운팁 리스트: 모바일은 1열로 */
+  .tip-box {
+    padding: 18px;            /* 35px → 18px */
+    margin-top: 35px;
+  }
+
+  .tip-list {
+    grid-template-columns: 1fr; /* 2열/자동 → 1열 */
+    gap: 10px;
+  }
+
+  .tip-list li {
+    padding: 12px 14px;
+  }
+
+  .tip-footer {
+    padding: 14px;
+    margin-top: 18px;
+  }
+}
+
+/* ✅ 아주 작은 화면(360px급) 추가 보정 */
+@media (max-width: 360px) {
+  body { padding: 12px; }
+  .container { padding: 14px; }
+  h1 { font-size: 1.45em; }
+}
+
+
+
+        
     }
 </style>
 </head>
@@ -461,4 +558,5 @@
 </div>
 
 </body>
+
 </html>
